@@ -8,6 +8,5 @@ Gem::Specification.new do |s|
   s.description = %q{MetaBool is small module which helps you to compare objects as they were boolean}
   s.has_rdoc = true
   s.authors = ["Paweł Wilk"]
-  s.files = ["lib/metabool.rb", "lib/metabool/main.rb]
-  s.rdoc_options = ["--main"]
+  s.files = ["lib/metabool.rb", "lib/metabool/main.rb" ]
 end
