@@ -8,10 +8,6 @@
 # This module contains helpers for evaluating logical expressions.
 
 module MetaBool
-  # :stopdoc:
-  VERSION_CODE = '000002'.freeze
-  VERSION = VERSION_CODE.scan(/../).collect{|n| n.to_i}.join('.').freeze
-  # :startdoc:
 
   def is_empty?(variable=self)
     if variable.respond_to?(:empty?) && variable.respond_to?(:strip)
@@ -32,7 +28,7 @@ module MetaBool
       return r
   end
 
-  def is_full(variable=self)    not is_empty?(variable) end
+  def is_full?(variable=self);   not is_empty?(variable) end
 
   def is_positive?(variable=self)
       r = true
