@@ -9,7 +9,7 @@
 
 module MetaBool
   # :stopdoc:
-  VERSION_CODE = '000004'.freeze
+  VERSION_CODE = '000005'.freeze
   VERSION = VERSION_CODE.scan(/../).collect{|n| n.to_i}.join('.').freeze
   # :startdoc:
 end

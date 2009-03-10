@@ -78,34 +78,26 @@ module MetaBool
     end
   end
 
-  def show_if_have(variable=self, message=nil)
+  def if_have(variable=self, message=nil)
    message = variable if message.nil?
-   have?(variable) ? message : false
-  end
-
-  def show_if_is(variable=self, message=nil)
-   message = variable if message.nil?
-   is_it?(variable) ? message : false
-  end
-
-  def show_if_it_is(variable=self, message=nil)
-    show_if_is(variable, first_txt, second_txt)
-  end
-  
-  def if_have(message=nil)
-    if block_given? && have?(self)
-      yield(message.nil? ? self : message)
-    else
-     show_if_have(self, message)
+   if have?(variable)
+     return block_given? ? yield(variable) : message
+   else
+     return false
    end
+ end
+
+  def if_is(variable=self, message=nil)
+    message = variable if message.nil?
+    if is_it?(variable)
+      return block_given? ? yield(variable) : message
+    else
+      return false
+    end
   end
- 
-  def if_is(message=nil)
-      if block_given? && is_it?(self)
-        yield(message.nil? ? self : message)
-      else
-       show_if_is(self, message)
-     end
+
+  def if_it_is(variable=self, message=nil)
+    return if_is(variable, message)
   end
 
 end
